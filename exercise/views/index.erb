@@ -1,0 +1,19 @@
+<h1>DATA ITEM</h1>
+
+<table>
+    <thead>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Action</th>
+        <th><a href="items/new">+ Add Item</a></th>
+    </thead>
+    <tbody>
+    <% items.each do |item| %>
+        <tr>
+            <td><%= item.name %></td>
+            <td><%= item.price %></td>
+            <td><a href="items/detail/<%= item.id %>">Detail</a> | <a href="items/edit/<%= item.id %>">Edit</a> | <a href="items/delete/<%= item.id %>">Delete</a></td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>

@@ -1,0 +1,47 @@
+<body>
+    <h1> ITEM EDIT</h1>
+
+    <form method="POST" action="/items/update/<%= item.id %>">
+        <table>
+            <thead>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><label for="category">Item Name </label></td>
+                    <td>:</td>
+                    <td><input name="name" type="text" value="<%= item.name %>" placeholder="item name.."/></td>
+                <tr>
+                <tr>
+                    <td><label for="category">Item Price </label></td>
+                    <td>:</td>
+                    <td><input name="price" type="number" value="<%= item.price %>" placeholder="item price.."/></td>
+                <tr>
+                <tr>
+                    <td><label for="category">Item Category </label></td>
+                    <td>:</td>
+                    <td>
+                        <select name="category_id" id="category_id">
+                            <option value="0" <% if item.category.id == 0 %> selected <%end%> >Uncategorized</option>
+                            <% categories.each do |category| %>
+                            <option value="<%= category.id %>" <% if item.category.id == category.id %> selected <%end%> > <%= category.name %> </option>
+                            <% end %>
+                        </select>
+                    </td>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                <tr>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><button type="submit">Save Item</button> | <a href="/">BACK</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
